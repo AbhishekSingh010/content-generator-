@@ -17,11 +17,11 @@ prompt = st.text_input("Enter your prompt:")
 
 # Function to display user input with chat icon
 def user_message(message):
-    st.markdown(f'<p style="background-color: #D3D3D3; padding: 10px; border-radius: 10px;"><b>User:</b> {message}</p>', unsafe_allow_html=True)
+    st.markdown(f'<p style="background-color:#665975; padding: 10px; border-radius: 10px;"><b>User:</b> <span style="background: linear-gradient(to right, #66ff66, #009933); padding: 5px; border-radius: 5px; -webkit-background-clip: text; -webkit-text-fill-color: transparent; color: black;">{message}</span></p>', unsafe_allow_html=True)
 
 # Function to display model response with bot icon
 def bot_message(message):
-    st.markdown(f'<p style="background-color: #F0F8FF; padding: 10px; border-radius: 10px;"><b>Bot:</b> {message}</p>', unsafe_allow_html=True)
+    st.markdown(f'<p style="background-color:#6a8991; padding: 10px; border-radius: 10px;"><b>Bot:</b> <span style="; padding: 5px; border-radius: 5px; color: black;">{message}</span></p>', unsafe_allow_html=True)
 
 # Generate content button
 if st.button("Generate Content"):
@@ -30,7 +30,7 @@ if st.button("Generate Content"):
             # Get model response
             response = content_creation(prompt)
             user_message(prompt)
-            bot_message(response.choices[0].text.strip())
+            bot_message(response.strip())  # Display the response directly
         except Exception as e:
             st.error("Error: " + str(e))
     else:
