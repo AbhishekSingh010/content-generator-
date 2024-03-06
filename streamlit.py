@@ -16,7 +16,7 @@ if st.button("Generate Content"):
             st.write("Generated Content:",response)
             st.write(response.choices[0].text.strip())
         except Exception as e:
-            st.error("Hope you like thi ")
+            st.error("Hope you like this")
     
     else:
         st.warning("please enter a prompt")        

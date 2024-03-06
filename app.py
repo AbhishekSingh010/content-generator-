@@ -26,10 +26,3 @@ def content_creation(topic):
     response = tweet_chain.run(topic=topic)
     return response
 
-# Example usage
-# topic = "technology"
-# 
-
-# # Generate content
-# content = content_creation(topic, tweet_prompt)
-# print(content)
